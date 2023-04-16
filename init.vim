@@ -10,14 +10,17 @@ Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'mhinz/vim-startify'
-Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sitiom/nvim-numbertoggle'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.1'}
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'windwp/nvim-autopairs'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'akinsho/bufferline.nvim', {'tag': 'v3.*' }
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -84,16 +87,14 @@ endfunction
 let g:coc_snippet_next = '<tab>'
 nnoremap <F5> :exec 'NERDTreeToggle' <CR>
 
-
-lua require("toggleterm").setup()
-
+lua require("telescope").load_extension "file_browser"
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fb <cmd>Telescope file_browser<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 lua << EOF
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = { "c", "cpp", "java", "javascript", "css", "html", "json", "python"},
 
@@ -133,9 +134,22 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+
+  autotag = {
+    enable = true,
+  },
 }
 EOF
 
 lua << END
 require('lualine').setup()
 END
+
+lua << EOF
+require('nvim-autopairs').setup()
+EOF
+
+set termguicolors
+lua << EOF
+require("bufferline").setup{}
+EOF
