@@ -21,6 +21,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'windwp/nvim-autopairs'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'akinsho/bufferline.nvim', {'tag': 'v3.*' }
+Plug 'karb94/neoscroll.nvim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -87,6 +88,7 @@ endfunction
 let g:coc_snippet_next = '<tab>'
 nnoremap <F5> :exec 'NERDTreeToggle' <CR>
 
+lua require('neoscroll').setup()
 lua require("telescope").load_extension "file_browser"
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>

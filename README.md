@@ -10,3 +10,4 @@
 - [AutoPairs](https://github.com/windwp/nvim-autopairs)
 - [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [BufferLine](https://github.com/akinsho/bufferline.nvim)
+- [Neoscroll](https://github.com/karb94/neoscroll.nvim)
