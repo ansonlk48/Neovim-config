@@ -22,6 +22,7 @@ Plug 'windwp/nvim-autopairs'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'akinsho/bufferline.nvim', {'tag': 'v3.*' }
 Plug 'karb94/neoscroll.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -32,6 +33,15 @@ set mouse=v                 " middle-click paste with
 set hlsearch                " highlight search
 set incsearch               " incremental search
 set tabstop=4               " number of columns occupied by a tab
+autocmd FileType css setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType javascriptreact setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType typescript setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType typescriptreact setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType vue setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType json setlocal shiftwidth=2 softtabstop=2 expandtab
 set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
 set expandtab               " converts tabs to white space
 set shiftwidth=4            " width for autoindents
@@ -56,7 +66,7 @@ set ttyfast                 " Speed up scrolling in Vim
  endif
  syntax enable
 " colorscheme evenig
-colorscheme catppuccin-macchiato " open new split panes to right and below
+colorscheme catppuccin-frappe " open new split panes to right and below
 set splitright
 set splitbelow
 
