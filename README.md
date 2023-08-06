@@ -1,6 +1,6 @@
 # My configuration of Neovim
 ## Neovim Plugin
-- [Telescope--with File Browser](https://github.com/wbthomason/packer.nvim) 
+- [Telescope--with File Browser](https://github.com/nvim-telescope/telescope.nvim) 
 - [Vim-snippets](https://github.com/SirVer/ultisnips)
 - [NerdTree](https://github.com/preservim/nerdtree)
 - [NerdCommenter](https://github.com/preservim/nerdcommenter)
