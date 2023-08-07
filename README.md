@@ -11,3 +11,5 @@
 - [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [BufferLine](https://github.com/akinsho/bufferline.nvim)
 - [Neoscroll](https://github.com/karb94/neoscroll.nvim)
+- [NumberToggle](https://github.com/sitiom/nvim-numbertoggle)
+- [Copilot](https://github.com/github/copilot.vim)
